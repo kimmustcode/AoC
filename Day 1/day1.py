@@ -1,8 +1,23 @@
 def dist(x, y):
     return max(x,y) - min(x,y)
 
-filename = "input1.txt"  
-sum = 0
+def similar(test_num, arr):
+    total = 0 
+
+    for i in range(len(arr)):
+        if arr[i] > test_num: 
+            return test_num * total  
+        elif arr[i] == test_num:
+            total += 1
+            i += 1  
+        else:
+            i += 1 
+    
+
+
+filename = "input.txt"  
+sim_sum = 0
+dist_sum = 0 
 l1 = []
 l2 = [] 
 
@@ -29,8 +44,12 @@ for line in lines:
 
 l1.sort()
 l2.sort()
- 
-for i in range(len(l1)):
-    sum += dist(l1[i], l2[i])
 
-print(sum)
+for num in l1: 
+    sim_sum += similar(num, l2)
+
+for i in range(len(l1)):
+    dist_sum += dist(l1[i], l2[i])
+
+
+print(sim_sum, dist_sum)
