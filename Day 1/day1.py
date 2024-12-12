@@ -12,8 +12,6 @@ def similar(test_num, arr):
             i += 1  
         else:
             i += 1 
-    
-
 
 filename = "input.txt"  
 sim_sum = 0
